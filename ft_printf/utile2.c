@@ -1,37 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   utile2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aslimani <aslimani@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 10:07:44 by aslimani          #+#    #+#             */
-/*   Updated: 2025/11/26 15:34:11 by aslimani         ###   ########.fr       */
+/*   Created: 2025/11/26 16:06:32 by aslimani          #+#    #+#             */
+/*   Updated: 2025/11/26 16:13:09 by aslimani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-int	ft_printf(const char *format, ...)
-{
-	int		return_value;
-	va_list	args;
-
-	va_start(args, format);
-	return_value = 0;
-	if (!format)
-		return (0);
-	while (*format)
-	{
-		if (*format == '%')
-		{
-			format++;
-			return_value += ft_parsing(*format, args);
-		}
-		else
-			return_value += write(1, format, 1);
-		format++;
-	}
-	va_end(args);
-	return (return_value);
-}

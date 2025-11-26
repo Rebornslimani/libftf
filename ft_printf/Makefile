@@ -1,24 +1,27 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libftprintf.a
-SOURCES = 
+SOURCES = ft_cstrprct.c ft_printf.c ft_parsing.c utile.c main.c 
+
 OBJS = $(SOURCES:.c=.o)
 
-HEADER = printf.h
-all : $(NAME)
+HEADER = ft_printf.h
 
-$(NAME): $(OBJ)
+
+all: $(NAME)
+	
+$(NAME): $(OBJS)
 	ar rcs $@ $^
 
 %.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) $(OBJBONUS)
+	rm -f $(OBJS) 
 
 fclean: clean 
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

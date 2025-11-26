@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aslimani <aslimani@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 10:07:44 by aslimani          #+#    #+#             */
-/*   Updated: 2025/11/26 15:34:11 by aslimani         ###   ########.fr       */
+/*   Created: 2025/11/26 11:06:06 by aslimani          #+#    #+#             */
+/*   Updated: 2025/11/26 15:36:59 by aslimani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
-int	ft_printf(const char *format, ...)
+int	main(void)
 {
-	int		return_value;
-	va_list	args;
-
-	va_start(args, format);
-	return_value = 0;
-	if (!format)
-		return (0);
-	while (*format)
-	{
-		if (*format == '%')
-		{
-			format++;
-			return_value += ft_parsing(*format, args);
-		}
-		else
-			return_value += write(1, format, 1);
-		format++;
-	}
-	va_end(args);
-	return (return_value);
+	// char	c = '5';
+	// char	*str = "yo tout le monde";
+	// char	*str1 = "salut";
+	
+	// ft_printf("%s %c %s %% %%", str, c, str1);
+	//ft_printf("%s %s ", "", "-");
+	printf ("%d\n",ft_printf("%u\n", -1));
+	printf ("%d\n",printf("%u ", -1));
+	return (0);
 }

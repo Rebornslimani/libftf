@@ -6,7 +6,7 @@
 /*   By: aslimani <aslimani@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 10:07:44 by aslimani          #+#    #+#             */
-/*   Updated: 2025/11/26 15:34:11 by aslimani         ###   ########.fr       */
+/*   Updated: 2025/11/28 15:21:37 by aslimani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_printf(const char *format, ...)
 	va_start(args, format);
 	return_value = 0;
 	if (!format)
-		return (0);
+		return (-1);
 	while (*format)
 	{
 		if (*format == '%')

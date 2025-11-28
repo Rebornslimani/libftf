@@ -1,12 +1,11 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libftprintf.a
-SOURCES = ft_cstrprct.c ft_printf.c ft_parsing.c utile.c main.c 
+SOURCES = ft_first.c ft_printf.c ft_parsing.c utile.c utile2.c
 
 OBJS = $(SOURCES:.c=.o)
 
 HEADER = ft_printf.h
-
 
 all: $(NAME)
 	

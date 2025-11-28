@@ -6,7 +6,7 @@
 /*   By: aslimani <aslimani@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 11:34:31 by aslimani          #+#    #+#             */
-/*   Updated: 2025/11/27 16:04:44 by aslimani         ###   ########.fr       */
+/*   Updated: 2025/11/28 15:26:58 by aslimani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,12 @@ int	ft_intlen(long n)
 	return (result);
 }
 
-void	ft_putnbr_hex(unsigned long nb, char x, int r)
+void	ft_putnbr_hex(long unsigned int nb, char x, int r)
 {
-	char *base;
+	char	*base;
 
 	base = NULL;
-	if(r == 0)
+	if (r == 0 && nb != 0)
 	{
 		ft_print_str("0x");
 		r++;
@@ -88,8 +88,4 @@ int	ft_strlen(char *str)
 	while (str[i])
 		i++;
 	return (i);
-}
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
 }

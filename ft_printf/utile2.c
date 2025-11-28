@@ -6,7 +6,13 @@
 /*   By: aslimani <aslimani@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 16:06:32 by aslimani          #+#    #+#             */
-/*   Updated: 2025/11/26 16:13:09 by aslimani         ###   ########.fr       */
+/*   Updated: 2025/11/28 15:25:15 by aslimani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}

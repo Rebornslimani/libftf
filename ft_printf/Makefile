@@ -1,7 +1,7 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libftprintf.a
-SOURCES = ft_first.c ft_printf.c ft_parsing.c utile.c utile2.c
+SOURCES = ft_first.c ft_printf.c ft_parsing.c ft_putnbr_base.c ft_len.c
 
 OBJS = $(SOURCES:.c=.o)
 

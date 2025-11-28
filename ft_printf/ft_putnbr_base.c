@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utile.c                                            :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aslimani <aslimani@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 11:34:31 by aslimani          #+#    #+#             */
-/*   Updated: 2025/11/28 15:26:58 by aslimani         ###   ########.fr       */
+/*   Updated: 2025/11/28 16:19:08 by aslimani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,23 +44,6 @@ void	ft_putnbr_unsigned(unsigned int nb)
 	}
 }
 
-int	ft_intlen(long n)
-{
-	int	result;
-
-	result = 0;
-	if (n == 0)
-		return (1);
-	else if (n < 0)
-		result++;
-	while (n != 0)
-	{
-		n /= 10;
-		result++;
-	}
-	return (result);
-}
-
 void	ft_putnbr_hex(long unsigned int nb, char x, int r)
 {
 	char	*base;
@@ -77,15 +60,5 @@ void	ft_putnbr_hex(long unsigned int nb, char x, int r)
 		base = "0123456789ABCDEF";
 	if (nb >= 16)
 		ft_putnbr_hex(nb / 16, x, r);
-	ft_putchar(base[nb % 16]);
-}
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	ft_print_char(base[nb % 16]);
 }

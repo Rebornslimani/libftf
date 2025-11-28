@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_len.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aslimani <aslimani@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 10:07:44 by aslimani          #+#    #+#             */
-/*   Updated: 2025/11/28 16:21:11 by aslimani         ###   ########.fr       */
+/*   Created: 2025/11/28 15:37:14 by aslimani          #+#    #+#             */
+/*   Updated: 2025/11/28 15:37:59 by aslimani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+int	ft_intlen(long n)
 {
-	int		return_value;
-	va_list	args;
+	int	result;
 
-	va_start(args, format);
-	return_value = 0;
-	if (!format)
-		return (-1);
-	while (*format)
+	result = 0;
+	if (n == 0)
+		return (1);
+	else if (n < 0)
+		result++;
+	while (n != 0)
 	{
-		if (*format == '%')
-		{
-			format++;
-			return_value += ft_parsing(*format, args);
-		}
-		else
-			return_value += write(1, format, 1);
-		format++;
+		n /= 10;
+		result++;
 	}
-	va_end(args);
-	return (return_value);
+	return (result);
+}
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

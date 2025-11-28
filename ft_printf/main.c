@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utile2.c                                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aslimani <aslimani@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 16:06:32 by aslimani          #+#    #+#             */
-/*   Updated: 2025/11/28 15:25:15 by aslimani         ###   ########.fr       */
+/*   Created: 2025/11/28 15:42:00 by aslimani          #+#    #+#             */
+/*   Updated: 2025/11/28 16:16:24 by aslimani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
-void	ft_putchar(char c)
+int	main(void)
 {
-	write(1, &c, 1);
+	printf("%d", ft_printf("%            z"), 12);
+	printf("%d", printf("%               z"), 12);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: aslimani <aslimani@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 10:03:23 by aslimani          #+#    #+#             */
-/*   Updated: 2025/11/28 11:23:07 by aslimani         ###   ########.fr       */
+/*   Updated: 2025/11/28 15:34:27 by aslimani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,4 @@ int		ft_intlen(long n);
 void	ft_putnbr(int n);
 void	ft_putnbr_unsigned(unsigned int n);
 void	ft_putnbr_hex(long unsigned int nb, char x, int r);
-void	ft_putchar(char c);
 #endif

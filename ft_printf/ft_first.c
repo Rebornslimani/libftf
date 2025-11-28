@@ -6,7 +6,7 @@
 /*   By: aslimani <aslimani@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 12:42:35 by aslimani          #+#    #+#             */
-/*   Updated: 2025/11/28 15:23:56 by aslimani         ###   ########.fr       */
+/*   Updated: 2025/11/28 15:35:36 by aslimani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	ft_print_unsigned(unsigned int n)
 	return (len);
 }
 
-int	ft_print_hex(unsigned long int n, char x, int r)
+int	ft_print_hex(long unsigned int n, char x, int r)
 {
 	int					len;
 	unsigned long int	nb;

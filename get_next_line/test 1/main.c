@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aslimani <aslimani@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: slimani2 <slimani2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 12:45:21 by aslimani          #+#    #+#             */
-/*   Updated: 2025/12/03 14:13:30 by aslimani         ###   ########.fr       */
+/*   Updated: 2025/12/03 20:58:50 by slimani2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main(void)
         return 1;
     }
 
-    while (i < 5)
+    while (i < 9)
     {
 		line = get_next_line(fd);
         printf("Ligne : %s", line);

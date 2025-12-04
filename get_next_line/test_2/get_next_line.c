@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aslimani <aslimani@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: slimani2 <slimani2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 10:25:13 by aslimani          #+#    #+#             */
-/*   Updated: 2025/12/04 16:44:06 by aslimani         ###   ########.fr       */
+/*   Updated: 2025/12/04 22:29:31 by slimani2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ char    *get_next_line(int fd)
 	if (!line || line[0] == '\0')
 	{
 		free(line);
-		line = NULL;
 		return (NULL);
 	}
 	lentot = ft_strlen(line);
@@ -45,7 +44,7 @@ char    *get_next_line(int fd)
 	line = ft_substr(old, 0, len);
 	free(old);
 	if(!is_end_of_file)
-		ft_memmove(buffer, buffer + len - 1);
+		ft_memmove(buffer, buffer + len);
 	else
 		buffer[0] = '\0';
 	return (line);
@@ -58,25 +57,24 @@ char	*extract_line(int fd, char *buf)
 	char	*old_line;
 
 	line = ft_strdup("");
+	if (buf[0] != '\0')
+	{
+		old_line = line;
+		line = ft_strjoin(old_line, buf);
+		free(old_line);
+		if(ft_strchr(buf, '\n'))
+			return (line);
+		buf[0] = '\0';
+	}
 	readed = BUFFER_SIZE;
 	while (!ft_strchr(buf, '\n') && readed > 0)
 	{
 		readed = read(fd, buf, BUFFER_SIZE);
-		if(readed == 0)
-			break ;
+		if(readed <= 0)
+			break;
 		buf[readed] = '\0';
-		if (readed < 0)
-		{
-			free(line);
-			return (NULL);
-		}
 		old_line = line;
 		line = ft_strjoin(old_line, buf);
-		if(!line)
-		{
-			free(old_line);
-			return (NULL);
-		}
 		free(old_line);
 	}
 	return (line);

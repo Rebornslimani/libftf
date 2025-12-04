@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aslimani <aslimani@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: slimani2 <slimani2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 10:25:33 by aslimani          #+#    #+#             */
-/*   Updated: 2025/12/04 15:00:47 by aslimani         ###   ########.fr       */
+/*   Updated: 2025/12/04 22:14:42 by slimani2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,17 +61,16 @@ int	ft_Rstrchr(const char *s, int c)
 void	ft_memmove(char *dest, char *src)
 {
 	size_t	i;
-	size_t	j;
 
 	i = 0;
-	j = 0;
+	if (!dest || !src)
+		return;
 	while (src[i])
 	{
-		dest[j] = src[i];
+		dest[i] = src[i];
 		i++;
-		j++;
 	}
-	dest[j] = 0;
+	dest[i] = '\0';
 }
 
 char	*ft_strncat(char *dest, const char *src, unsigned int nb)
@@ -97,25 +96,23 @@ char	*ft_strncat(char *dest, const char *src, unsigned int nb)
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
-	int		lens1;
-	int		lens2;
-	int		lentot;
+	int		len1;
+	int		len2;
 
 	str = NULL;
 	if (!s1 && !s2)
 		return (NULL);
 	if (!s1)
 		return (ft_strdup(s2));
-	lens1 = ft_strlen(s1);
-	lens2 = ft_strlen(s2);
-	lentot = lens1 + lens2;
-	str = malloc(sizeof(char) * (lentot + 1) );
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	str = malloc(sizeof(char) * (len1 +len2 + 1) );
 	if (!str)
 		return (0);
 	str[0] = '\0';
-	ft_strncat(str, s1, lens1);
-	ft_strncat(str, s2, lens2);
-	str[lentot] = '\0';
+	ft_strncat(str, s1, len1);
+	ft_strncat(str, s2, len2);
+	//str[lentot] = '\0';
 	return (str);
 }
 

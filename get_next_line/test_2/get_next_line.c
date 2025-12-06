@@ -6,7 +6,7 @@
 /*   By: slimani2 <slimani2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 10:25:13 by aslimani          #+#    #+#             */
-/*   Updated: 2025/12/04 22:29:31 by slimani2         ###   ########.fr       */
+/*   Updated: 2025/12/05 20:51:22 by slimani2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ char    *get_next_line(int fd)
 	old = line;
 	line = ft_substr(old, 0, len);
 	free(old);
+	len = ft_Rstrchr(buffer, '\n');
+	len += 1;
 	if(!is_end_of_file)
 		ft_memmove(buffer, buffer + len);
 	else
@@ -70,8 +72,14 @@ char	*extract_line(int fd, char *buf)
 	while (!ft_strchr(buf, '\n') && readed > 0)
 	{
 		readed = read(fd, buf, BUFFER_SIZE);
-		if(readed <= 0)
-			break;
+		if (readed < 0)
+		{
+   			free(line);
+    		buf[0] = '\0';
+    		return (NULL);
+		}
+		if (readed == 0)
+    		break;
 		buf[readed] = '\0';
 		old_line = line;
 		line = ft_strjoin(old_line, buf);

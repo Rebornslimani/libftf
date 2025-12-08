@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aslimani <aslimani@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: slimani2 <slimani2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 10:33:53 by aslimani          #+#    #+#             */
-/*   Updated: 2025/12/08 15:55:01 by aslimani         ###   ########.fr       */
+/*   Updated: 2025/12/08 22:11:53 by slimani2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 # include <unistd.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
+#  define BUFFER_SIZE 10
 # endif
 
 // file get next line
 char	*get_next_line(int fd);
 char	*extract_and_store(int fd, char *buf);
-char	*extract_line(char *line);
+char	*extract_line(char *line, char *buffer);
 void	ft_memmove(char *dest, char *src);
 char	*error_readed(char *line, char *buffer);
 // file utils

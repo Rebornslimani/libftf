@@ -6,7 +6,7 @@
 /*   By: aslimani <aslimani@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 10:32:36 by aslimani          #+#    #+#             */
-/*   Updated: 2025/12/04 16:40:01 by aslimani         ###   ########.fr       */
+/*   Updated: 2025/12/05 11:28:15 by aslimani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main(void)
 	int	i;
 
 	i = 0;
-    fd = open("big_line_with_nl", O_RDONLY);
+    fd = open("text.txt", O_RDONLY);
     while (i < 2)
     {
 		line = get_next_line(fd);
